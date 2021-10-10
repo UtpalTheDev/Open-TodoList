@@ -21,6 +21,9 @@ addTodo.addEventListener('submit', e => {
     e.preventDefault();
 
     const todo = addTodo.add.value;
+    const match=todo.match(/\s*[A-z]|[0-9]/g)?.length
+    if(todo.length>0 && match>0){
     createTodo(todo);
+    }
 
 });
